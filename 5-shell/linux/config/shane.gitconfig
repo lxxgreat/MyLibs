@@ -1,0 +1,48 @@
+[user]
+    name = lxxgreat
+    email = lxxgreat@163.com
+
+[core]
+    editor = vim
+
+[branch]
+	autosetuprebase = always
+
+[push]
+	default = tracking
+
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	ui = auto
+	pager = true
+
+[color "branch"]
+	current = green bold
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = green
+	changed = green
+	untracked = red
+
+[diff]
+	tool = bcompare_git
+
+[difftool]
+	prompt = false
+
+[difftool "bcompare_git"]
+	cmd = /usr/bin/bcompare \"$LOCAL\" \"$REMOTE\"
+
+[alias]
+	lg = log --color --graph --pretty
+	st = status
