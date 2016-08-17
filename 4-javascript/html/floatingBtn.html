@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>悬浮按钮演示</title>
+    <!-- Bootstrap核心CSS文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+    <!-- 可选的Bootstrap主题文件(一般不用引入) -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <!-- jQuery文件，在bootstrap.min.js之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Bootstrap核心JavaScript文件 -->
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<h2 class="text-center"><strong>悬浮按钮演示</strong></h2>
+
+<script type="text/javascript">
+    $(function() {
+        var offset = $("#floatingSubmit").offset();
+        var topPadding = 180;
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > offset.top) {
+                $("#floatingSubmit").stop().animate({
+                    marginTop: $(window).scrollTop() - offset.top + topPadding
+                },0);
+            } else {
+                $("#floatingSubmit").stop().animate({
+                    marginTop: 0
+                },0);
+            };
+        });
+    });
+</script>
+<style type="text/css">
+    #floating-box {
+        position: relative;
+    }
+    #floatingSubmit {
+        position: absolute;
+        top: 180px;
+        left: 1600px;
+        border: 0px solid #B5076D;
+        padding: 0 10px 10px 10px;
+        width: 200px;
+        background-color: #FFF;
+    }
+</style>
+<div id="floating-box">
+    <div id="floatingSubmit" class="col-xs-2">
+        <button id="floatingSubmitBtn" class="noprint btn btn-info btn-lg" type="button" onclick="window.print()">打印</button>
+    </div>
+</div>
+
+    </body>
+</html>
