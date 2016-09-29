@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>last.html</title>
+<style type="text/css">
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+ 
+td {
+    border: 1px solid black;
+}
+</style>
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery (function ($)
+    {
+        $ (':button:first').click (function ()
+        {
+            var insert = $ ('table tr :radio:checked').closest ('tr');
+            var tr = insert.prev ('tr');
+			if (tr.length == 0) {
+				alert('已是第一行');
+			} else {
+				tr.before (insert);
+			}
+            
+        });
+         
+        $ (':button:last').click (function ()
+        {
+            var insert = $ ('table tr :radio:checked').closest ('tr');
+            var tr = insert.next ('tr');
+			if (tr.length == 0) {
+				alert('已是最后一行');
+			} else {
+				tr.after (insert);
+			}
+        });
+    });
+</script>
+</head>
+<body>
+    <TABLE>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>1</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>2</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>3</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>4</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>5</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>6</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>7</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>8</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>9</TD>
+        </TR>
+        <TR>
+            <TD><input type="radio" name="rdo" /></TD>
+            <TD>10</TD>
+        </TR>
+    </TABLE>
+	<input type="button" value="上移" />
+    <input type="button" value="下移" />
+
+</body>
+</html>
